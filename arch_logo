@@ -1,0 +1,49 @@
+conky.config = {
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+	own_window_colour = 'black',
+	own_window_class = 'Conky',
+	own_window_title = 'Simple Default Conky',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	double_buffer = true,
+
+	minimum_width = 100, minimum_height = 40,
+	maximum_width = 1024,
+	gap_x = 30,
+	gap_y = 1040,
+
+	use_xft = true,
+	font = 'GE Inspira:bold:size=20',
+	xftalpha = 0.1,
+	override_utf8_locale = true,
+	draw_shades = false,
+	default_shade_color = 'black',
+	draw_outline = true,
+	default_outline_color = 'black',
+	uppercase = false,
+
+	alignment = 'top_left',
+
+	default_color = '#DCDCDC',
+	color0 = '#1793d0',
+	color4 = '#4D4D4D',
+
+	draw_borders = false,
+	draw_outline = false,
+	stippled_borders = 0,
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	border_width = 0,
+
+	background = true,
+	update_interval = 36000,
+
+};
+
+conky.text = [[
+${font GE Inspira:bold:pixelsize=30}${color0}Arch ${color}Linux. ${color0}${font GE Inspira:bold:pixelsize=10}${color4} A simple, lightweight linux distribution.
+]];
+
