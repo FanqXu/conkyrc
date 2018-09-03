@@ -39,7 +39,7 @@ Now, you can run `source ～/.xprofile` in terminal or re-login desktop environm
 
 ## 截图丨Screenshot
 
-![Screenshot_from_2018-09-03_12-54-33.png](https://github.com/milkysilk/conkyrc/blob/master/Screenshot%20from%202018-09-03%2012-54-33.png "Screenshot_from_2018-09-03_12-54-33.png")
+![Screenshot_from_2018-09-03_12-54-33.png](https://raw.githubusercontent.com/milkysilk/conkyrc/master/Screenshot%20from%202018-09-03%2012-54-33.png "Screenshot_from_2018-09-03_12-54-33.png")
 
 ## 局限丨Limit
 
