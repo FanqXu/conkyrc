@@ -72,64 +72,7 @@ settings_table = {
 		start_angle=0,
 		end_angle=360
 	},
-	{
-		name='cpu',
-		arg='cpu1',
-		max=100,
-		bg_colour=0xffffff,
-		bg_alpha=0.2,
-		fg_colour=0xffffff,
-		fg_alpha=0.5,
-		x=160, y=155,
-		radius=75,
-		thickness=5,
-		start_angle=93,
-		end_angle=208
-	},
-	{
-		name='cpu',
-		arg='cpu2',
-		max=100,
-		bg_colour=0xffffff,
-		bg_alpha=0.2,
-		fg_colour=0xffffff,
-		fg_alpha=0.5,
-		x=160, y=155,
-		radius=81,
-		thickness=5,
-		start_angle=93,
-		end_angle=208
-	},
-
-	{
-        name='cpu',
-        arg='cpu3',
-        max=100,
-        bg_colour=0xffffff,
-        bg_alpha=0.2,
-        fg_colour=0xffffff,
-        fg_alpha=0.5,
-        x=160, y=155,
-        radius=87,
-        thickness=5,
-        start_angle=93,
-        end_angle=208
-        },
-
-	{
-        name='cpu',
-        arg='cpu4',
-        max=100,
-        bg_colour=0xffffff,
-        bg_alpha=0.2,
-        fg_colour=0xffffff,
-        fg_alpha=0.5,
-        x=160, y=155,
-        radius=93,
-        thickness=5,
-        start_angle=93,
-        end_angle=208
-		},
+-- cpu here
 	{
 		name='memperc',
 		arg='',
@@ -313,18 +256,18 @@ end
 
 function conky_clock_rings()
 	local function setup_rings(cr,pt)
-                local str=''
-                local value=0
+		local str=''
+		local value=0
 
-                str=string.format('${%s %s}',pt['name'],pt['arg'])
-                str=conky_parse(str)
+		str=string.format('${%s %s}',pt['name'],pt['arg'])
+		str=conky_parse(str)
 
-                value=tonumber(str)
-                if value == nil then value = 0 end
-                pct=value/pt['max']
-
-                draw_ring(cr,pct,pt)
-        end
+		value=tonumber(str)
+		if value == nil then value = 0 end
+		pct=value/pt['max']
+		
+		draw_ring(cr,pct,pt)
+	end
 
 
 

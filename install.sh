@@ -7,6 +7,43 @@ fi
 cp ./arch_logo $HOME/.config/conky
 echo "copying arch_logo to $HOME/.config/conky"
 cp ./clock $HOME/.config/conky
+
+echo "modifying configuration file for your machine"
+
+t=$(grep 'processor' /proc/cpuinfo | sort -u | wc -l)
+r=75
+
+for ((i=1; i<=$t; i++))
+do
+	content=$(
+cat << EOF
+\\\t{
+\\\t\tname='cpu',
+\\\t\targ='cpu$i',
+\\\t\tmax=100,
+\\\t\tbg_colour=0xffffff,
+\\\t\tbg_alpha=0.2,
+\\\t\tfg_colour=0xffffff,
+\\\t\tfg_alpha=0.5,
+\\\t\tx=160,
+\\\t\t\ty=155,
+\\\t\tradius=$r,
+\\\t\tthickness=5,
+\\\t\tstart_angle=93,
+\\\t\tend_angle=208
+\\\t},
+EOF
+	)
+	for item in $content
+	do
+		n=$(grep -n "cpu here" clock_rings.lua | cut -f 1 -d ":")
+		sed -i "${n}i $item" clock_rings.lua
+	done
+	let "r = r + 6"
+done
+
+sed -i "/cpu here/d" clock_rings.lua
+
 echo "copying clock to $HOME/.config/conky"
 cp ./clock_rings.lua $HOME/.config/conky
 echo "copying clock_rings.lua to $HOME/.config/conky"
@@ -27,3 +64,4 @@ echo "~/.config/conky/startconky.sh &" >> $HOME/.xprofile
 echo "adding start script to $HOME/.xprofile"
 echo ""
 echo "done"
+
