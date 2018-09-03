@@ -65,3 +65,5 @@ Memory: 3282MiB / 7870MiB
 四线程CPU的机子应该没问题，嗯，，，
 
 Four thread CPU computer should be OK, hum...
+
+## EOF
