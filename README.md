@@ -62,8 +62,8 @@ GPU: NVIDIA GeForce GTX 960M
 Memory: 3282MiB / 7870MiB
 ```
 
-四线程CPU的机子应该没问题，嗯，，，
+目前最多只支持四线程CPU的机子，嗯，，，
 
-Four thread CPU computer should be OK, hum...
+At present, only 4 thread CPU machine are supported at most, hum...
 
 ## EOF
