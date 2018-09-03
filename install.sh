@@ -7,6 +7,7 @@ fi
 cp ./arch_logo $HOME/.config/conky
 echo "copying arch_logo to $HOME/.config/conky"
 cp ./clock $HOME/.config/conky
+echo "copying clock to $HOME/.config/conky"
 
 echo "modifying configuration file for your machine"
 
@@ -44,11 +45,13 @@ done
 
 sed -i "/cpu here/d" clock_rings.lua
 
-echo "copying clock to $HOME/.config/conky"
 cp ./clock_rings.lua $HOME/.config/conky
 echo "copying clock_rings.lua to $HOME/.config/conky"
 cp ./cpu $HOME/.config/conky
 echo "copying cpu to $HOME/.config/conky"
+
+mydisk=$(df | grep "\s/$" | cut -f 1 -d " ")
+sed -i "s/rootdisk/$mydisk/g" disk
 cp ./disk $HOME/.config/conky
 echo "copying disk to $HOME/.config/conky"
 cp ./network $HOME/.config/conky
