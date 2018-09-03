@@ -64,6 +64,6 @@ Memory: 3282MiB / 7870MiB
 
 目前最多只支持四线程CPU的机子，嗯，，，
 
-At present, only 4 thread CPU machine are supported at most, hum...
+Currently, PCs with up to 4 threads of CPU are supported, hum...
 
 ## EOF
