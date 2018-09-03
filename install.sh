@@ -9,8 +9,6 @@ echo "copying arch_logo to $HOME/.config/conky"
 cp ./clock $HOME/.config/conky
 echo "copying clock to $HOME/.config/conky"
 
-echo "modifying configuration file for your machine"
-
 t=$(grep 'processor' /proc/cpuinfo | sort -u | wc -l)
 r=75
 
@@ -54,8 +52,12 @@ mydisk=$(df | grep "\s/$" | cut -f 1 -d " ")
 sed -i "s/rootdisk/$mydisk/g" disk
 cp ./disk $HOME/.config/conky
 echo "copying disk to $HOME/.config/conky"
+
+myinterface=$(ip link | grep UP | grep BROADCAST | grep -v CARRIER | grep -v LOOP | cut -f 2 -d ":" | cut -f 2 -d " ")
+sed -i "s/interface/$myinterface/g" network
 cp ./network $HOME/.config/conky
 echo "copying network to $HOME/.config/conky"
+
 cp ./ram $HOME/.config/conky
 echo "copying ram to $HOME/.config/conky"
 cp ./rings $HOME/.config/conky
