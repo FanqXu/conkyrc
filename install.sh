@@ -49,7 +49,7 @@ cp ./cpu $HOME/.config/conky
 echo "copying cpu to $HOME/.config/conky"
 
 mydisk=$(df | grep "\s/$" | cut -f 1 -d " ")
-sed -i "s/rootdisk/$mydisk/g" disk
+sed -i "s:rootdisk:$mydisk:g" disk
 cp ./disk $HOME/.config/conky
 echo "copying disk to $HOME/.config/conky"
 
