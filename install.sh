@@ -4,8 +4,6 @@ if [ ! -d "$HOME/.config/conky" ]
 then
 	mkdir -p $HOME/.config/conky
 fi
-cp ./arch_logo $HOME/.config/conky
-echo "copying arch_logo to $HOME/.config/conky"
 cp ./clock $HOME/.config/conky
 echo "copying clock to $HOME/.config/conky"
 
@@ -69,4 +67,3 @@ echo "~/.config/conky/startconky.sh &" >> $HOME/.xprofile
 echo "adding start script to $HOME/.xprofile"
 echo ""
 echo "done"
-
